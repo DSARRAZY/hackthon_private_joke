@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tableau de bord{% endblock %}
+
+{% block body %}
+    <h1 class="boarding">Tableau de bord</h1>
+
+        <div class="row">
+        {% for patient in patients %}
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ patient.name }}</h2>
+                        <p>Tél : {{ patient.phone }}</p>
+                        <p>Mail : {{ patient.email }}</p>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+                <p>Aucun enregistrement trouvé</p>
+        {% endfor %}
+        </div>
+
+
+    <a class="btn btn-success" href="{{ path('patient_new') }}">Ajouter</a>
+{% endblock %}

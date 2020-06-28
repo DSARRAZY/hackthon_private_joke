@@ -1,0 +1,36 @@
+<div class="header pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+  {% if app.user %}
+    <div class="volet p-4 d-flex align-items-center justify-content-lg-center">
+    <h1 style="color:black;">Welcome <strong class="text-dark">{{ app.user.email }} </strong>
+    </h1>
+    </div>
+    {% else %}
+      <div class="volet p-4 d-flex align-items-center justify-content-lg-center">
+      <h1 class="text-dark bg-white">Veuillez vous connecter</h1>
+    </div>
+    {% endif %}
+
+    <div class="volet p-4 d-flex align-items-center justify-content-lg-end">
+    {% if app.user %}
+      <a class="login btn btn-danger" href="{{ path('app_logout') }}"><strong> Se déconnecter</strong></a>
+    {% else %}
+      <a class="login btn btn-success" href="{{ path('app_login') }}"> Se connecter</a>
+    {% endif %}
+    </div>
+  </div>
+  {% for label, messages in app.flashes %}
+    {% for message in messages %}
+      <div class="alert alert-{{ label }}">
+      <strong>{{ message }}</strong>
+      </div>
+    {% endfor %}
+  {% endfor %}
+  <nav class="navbar fixed-bottom navbar-primary bg-primary">
+    <a href="{{ path('home_index') }}"><img class="" style="width:70px;" src="{{ asset('build/images/icon_health.png') }}" alt=""/></a>
+    <h1 class="name_team text-align-center">SURVEY HEALTH CARE<span> by Private Joke</span></h1>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-medkit fa-3x" aria-hidden="true"></i>
+      </button>
+  </nav>
+</div>

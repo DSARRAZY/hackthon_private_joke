@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Patient{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-center">
+        <h1 class="text-white">Suivi</h1>
+    </div>
+
+<div class="row">
+    {% for patient in patients %}
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">{{ patient.name }}</h2>
+                    <p>Tél : {{ patient.phone }}</p>
+                    <p>Mail : {{ patient.email }}</p>
+                    <td class="d-flex justify-content-end"><a class="btn btn-warning" href="{{ path('patient_show', {'id': patient.id }) }}">Fiche patient</a></td>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p>Aucun patients trouvé</p>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

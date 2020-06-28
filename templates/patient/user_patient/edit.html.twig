@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Patient{% endblock %}
+
+{% block body %}
+<div class="d-flex justify-content-center">
+    <h1>Suivre ce patient</h1>
+</div>
+<div class="container">
+    
+    {{ include('patient/user_patient/_form.html.twig', {'button_label': 'Suivre'}) }}
+
+</div>
+
+{% endblock %}

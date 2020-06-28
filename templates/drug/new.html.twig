@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un médicament{% endblock %}
+
+{% block body %}
+    <h1>Ajouter un médicament</h1>
+
+    {{ include('drug/_form.html.twig') }}
+
+    <a class = "btn btn-info" href="{{ path('drug_index') }}">Retour</a>
+{% endblock %}

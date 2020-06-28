@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau suivi{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Suivre une nouvelle personne</h1>
+
+    {{ include('patient/_form.html.twig') }}
+
+    <a class = "btn btn-info" href="{{ path('patient_index') }}">Retour</a>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fiche de suivi{% endblock %}
+
+{% block body %}
+    <h1>{{ patient.name }}</h1>
+
+    <table class="table text-white">
+        <tbody>
+        <tr>
+            <th>Numéro de téléphone</th>
+            <td>{{ patient.phone }}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{ patient.email }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        {% for prescription in patient.dugInTake %}
+            <li><a class="btn btn-light" href="{{ path('prescription_show', {'id': prescription.id}) }}">{{ prescription.beginningOfTreatment ? prescription.beginningOfTreatment|date('d.m.Y') : '' }}</a></li>
+        {%  endfor %}
+    </ul>
+    
+    <div>
+        <img src="{{ asset('build/monitoring.png') }}">
+    </div>
+
+    <a class = "btn btn-info" href="{{ path('patient_index') }}">Retour</a>
+
+    <a class = "btn btn-warning" href="{{ path('patient_edit', {'id': patient.id}) }}">Editer</a>
+
+    <a class = "btn btn-success" href="{{ path('prescription_new') }}">Ajouter une prescription</a>
+
+    {{ include('patient/_delete_form.html.twig') }}
+{% endblock %}

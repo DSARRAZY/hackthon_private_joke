@@ -1,0 +1,46 @@
+@import "~bootstrap/scss/bootstrap";
+@import "home.scss";
+@font-face {
+  font-family:"Pacifico";
+  src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+
+  font-family:"Bubblegum";
+  src: url('../fonts/Bubblegum.ttf') format('truetype');
+}
+
+td,th {
+  color:white;
+}
+
+.form-check {
+  font-size: 1em;
+  color:white;
+}
+
+.form-check-label {
+  width: 30px;
+  height: 30px;
+}
+
+h1.landing{
+  padding-top: 5em;
+  text-align: center;
+  font-size: 50px;
+}
+
+a{
+  color: white;
+  font-size: 20px;
+}
+
+.card-title{
+  color: black;
+}
+
+.col-sm-4{
+  padding-bottom: 15px;
+}
+
+.boarding{
+  padding-bottom: 20px;
+}

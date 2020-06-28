@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if app.user %}
+    <div class="container">
+    <h1 class="text-align-center">Suivre un patient</h1>
+    <h4 class="text-align-center">Entrez le code patient</h4>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn btn-danger">{{ button_label|default('Suivre') }}</button>
+        {{ form_end(form) }}
+        <a class="btn btn-primary" href="{{ path('patient_new') }}">Ajouter nouveau patient</a>
+        <a class="btn btn-primary" href="{{ path('user_patient_index', {'id': user.id}) }}">Mes fiches patients</a>
+    </div>
+        {% else %}
+            <h1 class="landing">"Keep your loved one safe"</h1>
+    {% endif %}
+{% endblock %}

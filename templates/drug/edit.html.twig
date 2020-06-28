@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer{% endblock %}
+
+{% block body %}
+    <h1>Editer médicament</h1>
+
+    {{ include('drug/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a class = "btn btn-info" href="{{ path('drug_index') }}">Retour</a>
+
+    {{ include('drug/_delete_form.html.twig') }}
+{% endblock %}
